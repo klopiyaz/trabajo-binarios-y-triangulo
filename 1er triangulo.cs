@@ -4,31 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _1er_triangulo
+namespace ConsoleApp18
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //Input del usuario
-            Console.Write("Ingrese b: ");
+            Console.Write("valor b: ");
             double b = double.Parse(Console.ReadLine());
-            Console.Write("Ingrese Z: ");
+            Console.Write("valor z: ");
             double z = double.Parse(Console.ReadLine());
-            Console.Write("Ingrese Y: ");
+            Console.Write("valor y: ");
             double y = double.Parse(Console.ReadLine());
 
-            //operaciones matemáticas
+            double bRad = b * Math.PI / 180;
+
             double c = Math.Atan(z / y);
             double e = 180 - c;
             double d = 180 - b - e;
             double dRad = d * Math.PI / 180;
-            double bRad = b * Math.PI / 180;
             double w = z / (Math.Sin(dRad));
-            double W = w * w;
-            double Z = z * z;
-
-            double x = (Math.Sqrt(W - Z)) - y;
+            double x = (Math.Sqrt(w * w - z * z)) - y;
 
             Console.WriteLine("x: " + x);
 
